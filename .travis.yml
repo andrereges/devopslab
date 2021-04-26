@@ -1,6 +1,8 @@
 # Build Environment Overview
-os: ubuntu
+arch: amd64
+os: linux
 dist: focal
+group: edge
 sudo: true
 
 # Linguagem Utilizada para Desenvolver a Aplicação
@@ -8,7 +10,8 @@ language: python
 
 # Versão que a aplicação suporta.
 python:
-  - "3.7.9"
+  - "3.6"
+  - "3.7"
 
 # Instalação de Módulos que são necessários para a Aplicação.
 install:
