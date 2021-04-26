@@ -1,7 +1,6 @@
 # Build Environment Overview
-arch: amd64
 os: linux
-dist: bionic
+dist: xenial
 
 # Linguagem Utilizada para Desenvolver a Aplicação
 language: python
