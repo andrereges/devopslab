@@ -1,17 +1,16 @@
 # Build Environment Overview
-arch: amd64
-os: linux
-dist: xenial
-group: edge
-sudo: true
+#arch: amd64
+#os: linux
+#dist: xenial
+#group: edge
+#sudo: true
 
 # Linguagem Utilizada para Desenvolver a Aplicação
 language: python
 
 # Versão que a aplicação suporta.
 python:
-  - "3.6"
-  - "3.7"
+  - "3.7.9"
 
 # Instalação de Módulos que são necessários para a Aplicação.
 install:
