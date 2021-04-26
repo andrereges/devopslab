@@ -1,9 +1,9 @@
 # Build Environment Overview
-#arch: amd64
-#os: linux
-#dist: xenial
-#group: edge
-#sudo: true
+arch: amd64
+os: linux
+dist: xenial
+group: edge
+sudo: true
 
 # Linguagem Utilizada para Desenvolver a Aplicação
 language: python
@@ -18,8 +18,7 @@ install:
 
 # Defini o script de Teste que deve rodar toda vez que o código for alterado.
 script:
-  - python -m unittest -v test| travis_terminate 1;
-#  - python -m unittest -v test| travis_terminate 1;
+  - python -m unittest -v test || travis_terminate 1;
 
 # Definir o Deploy no Heroku
 deploy:
