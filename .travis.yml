@@ -21,7 +21,7 @@ script:
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
-  strategy: git
+  strategy: api
   edge: true 
   app: devopslab-andre
   on:
