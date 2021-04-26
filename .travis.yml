@@ -1,6 +1,7 @@
 # Build Environment Overview
-os: linux
-dist: xenial
+os: ubuntu
+dist: focal
+sudo: true
 
 # Linguagem Utilizada para Desenvolver a Aplicação
 language: python
