@@ -25,21 +25,25 @@ install:
 script:
   - python -m unittest -v test || travis_terminate 1;
 
+before_install:
+- openssl aes-256-cbc -K $encrypted_753c219f8756_key -iv $encrypted_753c219f8756_iv
+  -in lab-devops-cloud-andre-bafbaf4d095c.json.enc -out ../lab-devops-cloud-andre-bafbaf4d095c.json
+  -d
+
 # Definir o Deploy no Heroku
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
   strategy: api
-  edge: true 
+  edge: true
   app: devopslab-andre
   on:
       branch: main
-  - provider: gae
+
+# Definir o Deploy no Google Cloud
+deploy:
+  provider: gae
     keyfile: ../lab-devops-cloud-andre-bafbaf4d095c.json
     project: lab-devops-cloud-andre
     on:
       branch: main
-  before_install:
-  - openssl aes-256-cbc -K $encrypted_753c219f8756_key -iv $encrypted_753c219f8756_iv
-    -in lab-devops-cloud-andre-bafbaf4d095c.json.enc -out ../lab-devops-cloud-andre-bafbaf4d095c.json
-    -d
