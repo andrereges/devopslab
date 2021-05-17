@@ -35,7 +35,7 @@ deploy:
   on:
       branch: main
   - provider: gae
-   # keyfile: /home/vagrant/lab-devops-cloud-andre-bafbaf4d095c.json
+    keyfile: ../lab-devops-cloud-andre-bafbaf4d095c.json
     project: lab-devops-cloud-andre
     on:
       branch: main
