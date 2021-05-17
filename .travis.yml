@@ -40,7 +40,7 @@ jobs:
 
     - stage: STG TEST
       script:
-        - curl https://devopslab-andre.herokuapp.com/ | grep "Laboratório Pipeline DevOps - Andre" || travis_terminate 1;
+        - curl https://devopslab-andre.herokuapp.com/ | grep Andre || travis_terminate 1;
 
     - stage: PROD Deploy
       script: skip
@@ -54,5 +54,5 @@ jobs:
 
     - stage: PROD TEST
       script:
-        - curl https://lab-devops-cloud-andre.ue.r.appspot.com/ | grep "Laboratório Pipeline DevOps - Andre" || travis_terminate 1;
+        - curl https://lab-devops-cloud-andre.ue.r.appspot.com/ | grep Andre || travis_terminate 1;
 
