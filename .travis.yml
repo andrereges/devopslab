@@ -7,10 +7,10 @@ python:
 
 os: linux
 dist: xenial
-  
+
 before_install:
-- openssl aes-256-cbc -K $encrypted_041595a2e308_key -iv $encrypted_041595a2e308_iv
-  -in lab-devops-cloud-andre-314323-3bc58625fee4.json.enc -out ../lab-devops-cloud-andre-314323-3bc58625fee4.json
+- openssl aes-256-cbc -K $encrypted_3f8a220ad027_key -iv $encrypted_3f8a220ad027_iv
+  -in labdevopscloud-andre-78ea9910506b.json.enc -out ../labdevopscloud-andre-78ea9910506b.json
   -d
 
 jobs:
@@ -47,12 +47,12 @@ jobs:
       # Definir o Deploy no Google Cloud
       deploy:
         provider: gae
-        keyfile: ../lab-devops-cloud-andre-bafbaf4d095c.json
-        project: lab-devops-cloud-andre
+        keyfile: ../labdevopscloud-andre-78ea9910506b.json
+        project: labdevopscloud-andre
         on:
           branch: main
 
     - stage: PROD TEST
       script:
-        - curl https://lab-devops-cloud-andre.ue.r.appspot.com/ | grep Andre || travis_terminate 1;
+        - curl https://labdevopscloud-andre.ue.r.appspot.com/ | grep Andre || travis_terminate 1;
 
