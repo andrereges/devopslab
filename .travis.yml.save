@@ -1,0 +1,46 @@
+# Build Environment Overview
+arch: amd64
+os: linux
+dist: focal
+group: edge
+
+# Linguagem Utilizada para Desenvolver a Aplicação
+language: python
+
+# Versão que a aplicação suporta.
+python:
+  - "3.7.9"
+
+matrix:
+  include:
+    - python: 3.7
+      dist: focal
+      sudo: true
+
+# Instalação de Módulos que são necessários para a Aplicação.
+install:
+  - pip install flask
+
+# Defini o script de Teste que deve rodar toda vez que o código for alterado.
+script:
+  - python -m unittest -v test || travis_terminate 1;
+
+# Definir o Deploy no Heroku
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  strategy: api
+  edge: true 
+  app: devopslab-andre
+  on:
+      branch: main
+  provider: gae
+    keyfile: /home/vagrant/lab-devops-cloud-andre-bafbaf4d095c.json
+    project: lab-devops-cloud-andre
+    on:
+      branch: main
+
+	before_install:
+- openssl aes-256-cbc -K $encrypted_753c219f8756_key -iv $encrypted_753c219f8756_iv
+  -in lab-devops-cloud-andre-bafbaf4d095c.json.enc -out ../lab-devops-cloud-andre-bafbaf4d095c.json
+  -d

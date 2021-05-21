@@ -9,8 +9,8 @@ os: linux
 dist: xenial
   
 before_install:
-- openssl aes-256-cbc -K $encrypted_753c219f8756_key -iv $encrypted_753c219f8756_iv
-  -in lab-devops-cloud-andre-bafbaf4d095c.json.enc -out ../lab-devops-cloud-andre-bafbaf4d095c.json
+- openssl aes-256-cbc -K $encrypted_041595a2e308_key -iv $encrypted_041595a2e308_iv
+  -in lab-devops-cloud-andre-314323-3bc58625fee4.json.enc -out ../lab-devops-cloud-andre-314323-3bc58625fee4.json
   -d
 
 jobs:
