@@ -54,5 +54,5 @@ jobs:
 
     - stage: PROD TEST
       script:
-        - curl https://labdevopscloud-andre.ue.r.appspot.com/ | grep Andre || travis_terminate 1;
+        - curl https://labdevopscloud-andre.appspot.com/ | grep Andre || travis_terminate 1;
 
